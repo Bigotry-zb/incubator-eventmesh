@@ -105,7 +105,7 @@ public class NacosWebHookConfigOperation implements WebHookConfigOperation {
 
     @Override
     public Integer updateWebHookConfig(WebHookConfig webHookConfig) {
-        Boolean result = false;
+        boolean result = false;
         try {
             if (configService.getConfig(getWebHookConfigDataId(webHookConfig), getManuGroupId(webHookConfig), TIMEOUT_MS) == null) {
                 logger.error("updateWebHookConfig failed, config is not existed");
@@ -121,7 +121,7 @@ public class NacosWebHookConfigOperation implements WebHookConfigOperation {
 
     @Override
     public Integer deleteWebHookConfig(WebHookConfig webHookConfig) {
-        Boolean result = false;
+        boolean result = false;
         String manufacturerName = webHookConfig.getManufacturerName();
         try {
             result = configService.removeConfig(getWebHookConfigDataId(webHookConfig), getManuGroupId(webHookConfig));
